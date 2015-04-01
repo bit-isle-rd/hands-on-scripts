@@ -1,0 +1,6 @@
+#!/bin/bash
+
+export OS_AUTH_URL=http://XXXXXXXX:5000/v2.0
+export OS_TENANT_NAME="XXXUSERXXX"
+export OS_USERNAME="XXXUSERXXX"
+export OS_PASSWORD=pass2015

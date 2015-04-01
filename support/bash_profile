@@ -1,0 +1,11 @@
+# default openstack credential
+if [ -f /opt/support/openrc/openrc_${USER} ]; then
+   source /opt/support/openrc/openrc_${USER}
+fi
+
+# get loging info
+function check_id () {
+   env | egrep 'OS_USERNAME|OS_PASSWORD' | sort -r
+}
+
+source /opt/support/common/goodies.sh

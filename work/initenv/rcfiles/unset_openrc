@@ -1,0 +1,7 @@
+#!/bin/bash
+
+unset OS_AUTH_URL
+unset OS_TENANT_NAME
+unset OS_USERNAME
+unset OS_PASSWORD
+

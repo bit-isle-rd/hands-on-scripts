@@ -1,0 +1,16 @@
+#!/bin/bash
+cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+cd /root
+git clone -q https://github.com/josug-book1-materials/sample-app.git
+cd sample-app
+git checkout -b v1.0 remotes/origin/v1.0
+sh /root/sample-app/server-setup/install_rest.sh
+
+yum install -y jq crudini
+
+DBS_IP=`curl -s http://169.254.169.254/openstack/latest/meta_data.json | jq -r '.["meta"]["dbs_ip"]'`
+crudini --set /root/sample-app/endpoint.conf db-server db_host $DBS_IP
+
+sh /root/sample-app/server-setup/rest.init.sh start
+
+echo "### end userdata_app"

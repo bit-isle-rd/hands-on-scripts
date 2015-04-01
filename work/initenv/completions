@@ -1,0 +1,41 @@
+_keystone()
+{
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    COMPREPLY=( $(compgen -W "`keystone bash-completion`" -- $cur) )
+}
+complete -F _keystone keystone
+
+
+_nova()
+{
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    COMPREPLY=( $(compgen -W "`nova bash-completion`" -- $cur) )
+}
+complete -F _nova nova
+
+
+_glance()
+{
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    COMPREPLY=( $(compgen -W "`glance bash-completion`" -- $cur) )
+}
+complete -F _glance glance
+
+
+_neutron()
+{
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    COMPREPLY=( $(compgen -W "`neutron bash-completion`" -- $cur) )
+}
+complete -F _neutron neutron
+
+_cinder()
+{
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    COMPREPLY=( $(compgen -W "`cinder bash-completion`" -- $cur) )
+}
+complete -F _cinder cinder
+
+
+
+
